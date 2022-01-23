@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, HttpException, HttpStatus, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Delete, HttpException, HttpStatus, UseGuards } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -21,7 +21,7 @@ export class UsersController {
     });
   }
 
-  @UseGuards(JwtGuard, UsersGuard)
+  @UseGuards(JwtGuard, RolesGuard)
   @DecoRoles(Roles.ADMIN, Roles.USER)
   @Get('users')
   findAll() {
@@ -32,8 +32,9 @@ export class UsersController {
     });
   }
 
-  @UseGuards(JwtGuard, UsersGuard)
-  @DecoRoles(Roles.ADMIN, Roles.USER)
+  // GET USER BY ID WITH PARAM
+  /*@UseGuards(JwtGuard, UsersGuard)
+  @DecoRoles(Roles.ADMIN)
   @Get('user/:id')
   findOne(@Param('id') id: number) {
       return this.usersService.findOne(+id).catch(err => {
@@ -41,9 +42,20 @@ export class UsersController {
           message: err.message
         }, HttpStatus.INTERNAL_SERVER_ERROR);
       });
+  }*/
+
+  @UseGuards(JwtGuard, UsersGuard)
+  @DecoRoles(Roles.ADMIN)
+  @Get('user')
+  findOne(@Body('id') id: number) {
+      return this.usersService.findOne(+id).catch(err => {
+        throw new HttpException({
+          message: err.message
+        }, HttpStatus.INTERNAL_SERVER_ERROR);
+      });
   }
 
-  @UseGuards(JwtGuard, RolesGuard)
+  @UseGuards(JwtGuard, UsersGuard)
   @DecoRoles(Roles.ADMIN)
   @Put('updateuser')
   update(@Body('id') id: number, @Body() updateUserDto: UpdateUserDto) {
