@@ -21,8 +21,8 @@ export class UsersController {
     });
   }
 
-  @UseGuards(JwtGuard, RolesGuard)
-  @DecoRoles(Roles.ADMIN, Roles.USER)
+  /*@UseGuards(JwtGuard, RolesGuard)
+  @DecoRoles(Roles.USER)*/
   @Get('users')
   findAll() {
     return this.usersService.findAll().catch(err => {
@@ -44,8 +44,8 @@ export class UsersController {
       });
   }*/
 
-  @UseGuards(JwtGuard, UsersGuard)
-  @DecoRoles(Roles.ADMIN)
+  /*@UseGuards(JwtGuard, UsersGuard)
+  @DecoRoles(Roles.USER)*/
   @Get('user')
   findOne(@Body('id') id: number) {
       return this.usersService.findOne(+id).catch(err => {

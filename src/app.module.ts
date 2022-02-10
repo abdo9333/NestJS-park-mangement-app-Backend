@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { Users } from './users/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { TreesModule } from './trees/trees.module';
+import { Tree } from './trees/entities/tree.entity';
 
 @Module({
     imports: [
@@ -14,14 +16,15 @@ import { AuthModule } from './auth/auth.module';
       ConfigModule.forRoot(),
       TypeOrmModule.forRoot({
         type: 'mysql',
-        host: process.env.DB_HOST,
+        host: '127.0.0.1',
         port: 3306,
-        username: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_DATABASE,
-        entities: [Users],
+        username: 'nodejs',
+        password: 'nodejs',
+        database: 'jest',
+        entities: [Users, Tree],
         synchronize: true,
-      })
+      }),
+      TreesModule
     ],
   controllers: [AppController],
   providers: [AppService], 
