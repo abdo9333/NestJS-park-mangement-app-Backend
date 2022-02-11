@@ -15,6 +15,10 @@ export class Tree {
     @Column()
     historique: string;
 
+    @Column( { nullable: true })
+    
+    treeImage: string;
+
 }
 
 @EntityRepository(Tree)

@@ -3,4 +3,5 @@ export class CreateTreeDto {
     name: string;
     discription: string;
     historique: string;
+    treeImage: string;
 }

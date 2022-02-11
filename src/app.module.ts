@@ -8,7 +8,7 @@ import { Users } from './users/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { TreesModule } from './trees/trees.module';
 import { Tree } from './trees/entities/tree.entity';
-
+import { MulterModule } from '@nestjs/platform-express';
 @Module({
     imports: [
       AuthModule,

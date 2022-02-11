@@ -5,7 +5,7 @@ import { UpdateTreeDto } from './dto/update-tree.dto';
 import { Tree } from './entities/tree.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-
+import { from, Observable, switchMap } from 'rxjs';
 
 
 @Injectable()
@@ -27,11 +27,25 @@ export class TreesService {
     await this.TreeRepository.findOne(id);
   }
 
-  async   update(id: number, updateTreeDto: UpdateTreeDto) {
-    await this.TreeRepository.update(id, updateTreeDto);
+update(id: number, updateTreeDto: UpdateTreeDto) {
+    return this.TreeRepository.update(id, updateTreeDto);
   }
 
   async  remove(id: number) {
     await this.TreeRepository.delete(id);
   }
+
+  /*updateOne(id: number, tree : Tree): Observable<any> {
+   /* delete tree.discription;
+    delete tree.historique;
+    delete tree.name;*//*
+
+    return from(this.TreeRepository.update(id, tree)).pipe(
+        switchMap(() => this.findOne(id))
+    );
+}*/
+public async setImage(id: number, treeImage: string){
+    this.TreeRepository.update(id, {treeImage: treeImage});
+}
+  
 }
