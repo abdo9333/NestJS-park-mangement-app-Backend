@@ -37,7 +37,7 @@ update(id: number, updateSportDto: UpdateSportDto) {
 
   /*updateOne(id: number, sport : Sport): Observable<any> {
    /* delete sport.discription;
-    delete sport.historique;
+    delete sport.categorie;
     delete sport.name;*//*
 
     return from(this.SportRepository.update(id, sport)).pipe(
