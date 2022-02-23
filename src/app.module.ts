@@ -9,6 +9,10 @@ import { AuthModule } from './auth/auth.module';
 import { TreesModule } from './trees/trees.module';
 import { Tree } from './trees/entities/tree.entity';
 import { MulterModule } from '@nestjs/platform-express';
+import { Sport } from './sport/entities/sport.entity';
+import { Bird } from './birds/entities/bird.entity';
+import { SportModule } from './sport/sport.module';
+import { BirdModule } from './birds/bird.module';
 @Module({
     imports: [
       AuthModule,
@@ -21,10 +25,12 @@ import { MulterModule } from '@nestjs/platform-express';
         username: 'nodejs',
         password: 'nodejs',
         database: 'jest',
-        entities: [Users, Tree],
+        entities: [Users, Tree,Sport, Bird  ],
         synchronize: true,
       }),
-      TreesModule
+      TreesModule,
+      SportModule,
+      BirdModule
     ],
   controllers: [AppController],
   providers: [AppService], 
