@@ -3,5 +3,5 @@ export class CreateHandicapDto {
     name: string;
     discription: string;
     historique: string;
-    
+    handicapImage: string;
 }

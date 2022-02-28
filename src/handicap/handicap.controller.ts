@@ -36,7 +36,7 @@ export class HandicapController {
 
   @Put('updatehandicap/:id')
   update(@Param('id') id: string, @Body() updatehandicapDto: UpdateHandicapDto) {
-    return this.handicapService.update(+id, updateHandicapDto);
+    return this.handicapService.update(+id, updatehandicapDto);
   }
 
   @Delete('deletehandicap/:id')

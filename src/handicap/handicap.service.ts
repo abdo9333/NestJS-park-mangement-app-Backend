@@ -45,5 +45,7 @@ update(id: number, updateHandicapDto: UpdateHandicapDto) {
     );
 }*/
 
-  
+public async setImage(id: number, handicapImage: string){
+  this.HandicapRepository.update(id, {handicapImage: handicapImage}); 
+}
 }
