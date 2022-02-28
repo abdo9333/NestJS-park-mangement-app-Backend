@@ -13,6 +13,8 @@ import { Sport } from './sport/entities/sport.entity';
 import { Bird } from './birds/entities/bird.entity';
 import { SportModule } from './sport/sport.module';
 import { BirdModule } from './birds/bird.module';
+import { HandicapModule } from './handicap/handicap.module';
+import { Handicap } from './handicap/entities/handicap.entity';
 @Module({
     imports: [
       AuthModule,
@@ -25,12 +27,13 @@ import { BirdModule } from './birds/bird.module';
         username: 'nodejs',
         password: 'nodejs',
         database: 'jest',
-        entities: [Users, Tree,Sport, Bird  ],
+        entities: [Users, Tree,Sport, Bird ,Handicap ],
         synchronize: true,
       }),
       TreesModule,
       SportModule,
-      BirdModule
+      BirdModule,
+      HandicapModule
     ],
   controllers: [AppController],
   providers: [AppService], 
