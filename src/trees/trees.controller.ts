@@ -11,6 +11,7 @@ import { diskStorage } from 'multer';
 
 import { v4 as uuidv4 } from 'uuid';
 import path = require('path');
+import { Tree } from './entities/tree.entity';
 
 
 
@@ -29,18 +30,18 @@ export class TreesController {
     return this.treesService.findAll();
   }
 
-  @Get('tree/:id')
-  findOne(@Param('id') id: string) {
+  @Get('/:id')
+  findOne(@Param('id') id: number) {
     return this.treesService.findOne(+id);
   }
 
   @Put('updatetree/:id')
-  update(@Param('id') id: string, @Body() updateTreeDto: UpdateTreeDto) {
+  update(@Param('id') id: number, @Body() updateTreeDto: UpdateTreeDto) {
     return this.treesService.update(+id, updateTreeDto);
   }
 
   @Delete('deletetree/:id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.treesService.remove(+id);
   }
 
@@ -66,6 +67,12 @@ export class TreesController {
   async serveAvatar(@Param('fileId') fileId, @Res() res): Promise<any> {
     res.sendFile(fileId, { root: 'uploads'});
   }
+
+  @Put('updateOne/:id')
+  updateOne(@Param('id') id: string, @Body() tree : Tree): Observable<any> {
+      return this.treesService.updateOne(Number(id), tree);
+  }
+
        
 }
 

@@ -23,17 +23,32 @@ export class TreesService {
     return this.TreeRepository.find();
   }
 
-  async  findOne(id: number) {
+  /*async  findOne(id: number) {
     await this.TreeRepository.findOne(id);
+  }*/
+  findOne(id: number): Promise<Tree> {
+    return this.TreeRepository.findOne(id);
   }
 
-update(id: number, updateTreeDto: UpdateTreeDto) {
-    return this.TreeRepository.update(id, updateTreeDto);
-  }
+
 
   async  remove(id: number) {
     await this.TreeRepository.delete(id);
   }
+  update(id: number, updateTreeDto: UpdateTreeDto) {
+    return this.TreeRepository.update(id, updateTreeDto);
+  }
+
+  updateOne(id: number, tree: Tree): Observable<any> {
+    delete tree.name;
+    delete tree.discription;
+    delete tree.historique;
+
+    return from(this.TreeRepository.update(id, tree)).pipe(
+        switchMap(() => this.findOne(id))
+    );
+}
+
 
   /*updateOne(id: number, tree : Tree): Observable<any> {
    /* delete tree.discription;
