@@ -9,10 +9,10 @@ export class Handicap {
     @Column()
     name: string;
 
-    @Column()
+    @Column('text')
     discription: string;
 
-    @Column()
+    @Column('text')
     historique: string;
 
     @Column( { nullable: true })

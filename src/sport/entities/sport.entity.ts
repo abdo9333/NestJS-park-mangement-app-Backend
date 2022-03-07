@@ -6,13 +6,13 @@ export class Sport {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column('text')
     name: string;
 
-    @Column()
+    @Column('text')
     discription: string;
 
-    @Column()
+    @Column('text')
     categorie: string;
 
     @Column( { nullable: true })

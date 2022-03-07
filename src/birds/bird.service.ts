@@ -23,9 +23,11 @@ export class BirdService {
     return this.BirdRepository.find();
   }
 
-  async  findOne(id: number) {
-    await this.BirdRepository.findOne(id);
+  findOne(id: number) {
+    return this.BirdRepository.findOne(id);
   }
+
+
 
 update(id: number, updateBirdDto: UpdateBirdDto) {
     return this.BirdRepository.update(id, updateBirdDto);

@@ -29,10 +29,11 @@ export class BirdController {
     return this.birdService.findAll();
   }
 
-  @Get('bird/:id')
+  @Get('/:id')
   findOne(@Param('id') id: string) {
     return this.birdService.findOne(+id);
   }
+
 
   @Put('updatebird/:id')
   update(@Param('id') id: string, @Body() updateBirdDto: UpdateBirdDto) {

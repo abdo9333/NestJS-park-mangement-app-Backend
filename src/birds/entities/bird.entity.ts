@@ -9,10 +9,10 @@ export class Bird {
     @Column()
     name: string;
 
-    @Column()
+    @Column('text')
     discription: string;
 
-    @Column()
+    @Column('text')
     species: string;
 
     @Column( { nullable: true })

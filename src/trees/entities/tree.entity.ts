@@ -9,13 +9,13 @@ export class Tree {
     @Column()
     name: string;
 
-    @Column()
+    @Column('text')
     discription: string;
 
-    @Column()
+    @Column('text')
     historique: string;
 
-    @Column( { nullable: true })
+    @Column('text', { nullable: true })
     
     treeImage: string;
 
