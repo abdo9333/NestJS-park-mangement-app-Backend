@@ -23,11 +23,12 @@ export class HandicapService {
     return this.HandicapRepository.find();
   }
 
-  async  findOne(id: number) {
-    await this.HandicapRepository.findOne(id);
+  findOne(id: number) {
+    return this.HandicapRepository.findOne(id);
   }
 
-update(id: number, updateHandicapDto: UpdateHandicapDto) {
+
+  update(id: number, updateHandicapDto: UpdateHandicapDto) {
     return this.HandicapRepository.update(id, updateHandicapDto);
   }
 

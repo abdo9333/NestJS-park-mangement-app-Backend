@@ -26,6 +26,7 @@ export class TreesService {
   /*async  findOne(id: number) {
     await this.TreeRepository.findOne(id);
   }*/
+  
   findOne(id: number): Promise<Tree> {
     return this.TreeRepository.findOne(id);
   }

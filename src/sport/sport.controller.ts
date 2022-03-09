@@ -30,7 +30,7 @@ export class SportController {
   }
 
   @Get('sport/:id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.sportService.findOne(+id);
   }
 

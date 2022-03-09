@@ -23,8 +23,8 @@ export class SportService {
     return this.SportRepository.find();
   }
 
-  async  findOne(id: number) {
-    await this.SportRepository.findOne(id);
+ findOne(id: number) {
+    return this.SportRepository.findOne(id);
   }
 
 update(id: number, updateSportDto: UpdateSportDto) {

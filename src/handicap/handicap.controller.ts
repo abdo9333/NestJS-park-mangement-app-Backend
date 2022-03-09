@@ -30,7 +30,7 @@ export class HandicapController {
   }
 
   @Get('handicap/:id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.handicapService.findOne(+id);
   }
 
