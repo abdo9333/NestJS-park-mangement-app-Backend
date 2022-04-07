@@ -9,6 +9,9 @@ export class Tree {
     @Column()
     name: string;
 
+    @Column()
+    nameLatin: string;
+
     @Column('text')
     discription: string;
 
