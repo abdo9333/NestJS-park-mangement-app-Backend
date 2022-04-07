@@ -7,7 +7,7 @@
 
 - :telescope: RESTful API (CRUD) for Trees, Birds and Sports with an image upload.
 
-<img align="right" src="img/nestApi.jpg" alt="CRUD usage" />
+<img src="img/nestApi.jpg" alt="CRUD usage" />
 
 
 
