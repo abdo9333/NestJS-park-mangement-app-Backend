@@ -1,11 +1,13 @@
+
 ## Features
 
-- Authenticate a user by verifying their "credentials" ( email/password, JSON Web Token (JWT), or identity token from an Identity Provider)
-- Manage authenticated state (by issuing a portable token, such as a JWT, or creating an Express session)
-- RESTful API (CRUD) for Trees, Birds and Sports with an image upload.
+<img align="right" src="img/nestApi.jpg" alt="CRUD usage" />
 
-[circleci-image]: https://i.ibb.co/q9w59XQ/nestApi.jpg
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+- :octopus: Authenticate a user by verifying their "credentials" ( email/password, JSON Web Token (JWT), or identity token from an Identity Provider)
+
+- :mag_right: Manage authenticated state (by issuing a portable token, such as a JWT, or creating an Express session)
+
+- :telescope: RESTful API (CRUD) for Trees, Birds and Sports with an image upload.
 
 
 # nestjs-basic-api
