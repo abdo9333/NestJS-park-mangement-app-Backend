@@ -1,3 +1,15 @@
+
+## Features
+
+<img align="right" src="img/nestApi.jpg" alt="CRUD usage" />
+
+- :octopus: Authenticate a user by verifying their "credentials" ( email/password, JSON Web Token (JWT), or identity token from an Identity Provider)
+
+- :mag_right: Manage authenticated state (by issuing a portable token, such as a JWT, or creating an Express session)
+
+- :telescope: RESTful API (CRUD) for Trees, Birds and Sports with an image upload.
+
+
 # nestjs-basic-api
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
